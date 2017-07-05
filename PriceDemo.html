@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<script>
+	function GetPrice()
+	{
+    	//Initialize array
+		var PriceList = [];
+        
+        //set Product code and Price
+		PriceList.push({MinValue : 01, MaxValue : 10, Price : 50 });
+        PriceList.push({MinValue : 11, MaxValue : 20, Price : 100 });
+        PriceList.push({MinValue : 21, MaxValue : 30, Price : 150 });
+        PriceList.push({MinValue : 31, MaxValue : 40, Price : 200 });
+        PriceList.push({MinValue : 41, MaxValue : 50, Price : 250 });
+        PriceList.push({MinValue : 51, MaxValue : 60, Price : 300 });
+        PriceList.push({MinValue : 61, MaxValue : 100, Price : 350 });
+
+		//Read user Input
+		var ProductCode = document.getElementById('txtUserInput').value;
+        
+        //Traverse through whole array
+		for(var i=0;i<PriceList.length;i++)
+		{
+        	// Check with user input
+			if(PriceList[i].MinValue<=ProductCode && PriceList[i].MaxValue>=ProductCode)
+			{
+				alert(PriceList[i].Price);
+				break;
+			}
+		}
+	}
+</script>
+<body>
+	<p/>
+    <center><b>Price Demo</b></center>
+    <p/>
+	Enter Product Code Here : <input id='txtUserInput' placeholder='Only numbers'/>
+	<input type='button' id='btnGetPrice' value='Get Product Price' onClick='GetPrice();'>
+</body>
+</html>
